@@ -1,0 +1,38 @@
+[
+    {
+        "Id": 1,
+        "Name": "Name1",
+        "Description":"lorem ",
+        "AgeRestriction": 3,
+        "Company" : "Wfls Inc",
+        "Price": 132.34
+    },
+    
+    {
+        "Id": 2,
+        "Name": "Name2",
+        "Description":"lorem ",
+        "AgeRestriction": 3,
+        "Company" : "Wfls Inc",
+        "Price": 132.34
+    },
+
+    {
+        "Id": 3,
+        "Name": "Name3",
+        "Description":"lorem ",
+        "AgeRestriction": 3,
+        "Company" : "Wfls Inc",
+        "Price": 132.34
+    },
+
+    {
+        "Id": 4,
+        "Name": "Name4",
+        "Description":"lorem ",
+        "AgeRestriction": 3,
+        "Company" : "Wfls Inc",
+        "Price": 132.34
+    }
+
+]

@@ -44,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+bin/obj/npm_packages/nuget 
+
+bin/obj/npm_packages/nuget 
