@@ -25,20 +25,22 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log('maodal container ', this.modalContainer);
-    const modalFactory = this.cmp_resolver.resolveComponentFactory( ModalComponent );
-    this.modalCmp = this.modalContainer.createComponent(modalFactory);
+    
 
-    this.client_http.client.get<Product[]>(`${environment.global_url}Products`)
-      //.pipe()
-      .subscribe( (data)=> this.client_http.product_list = data );
-
-    this.gui.deleted_emitter$.subscribe(
-      (data)=>{ 
-        this.modalCmp.instance.item_to_del = data;
-        this.modalCmp.instance.show(); 
-      }
-    )
+      const modalFactory = this.cmp_resolver.resolveComponentFactory( ModalComponent );
+      this.modalCmp = this.modalContainer.createComponent(modalFactory);
+  
+      this.client_http.client.get<Product[]>(`${environment.global_url}Products`)
+        //.pipe()
+        .subscribe( (data)=> this.client_http.product_list = data,  ()=>this.client_http.product_list = [] );
+  
+      this.gui.deleted_emitter$.subscribe(
+        (data)=>{ 
+          this.modalCmp.instance.item_to_del = data;
+          this.modalCmp.instance.show(); 
+        }
+      )
+    
 
 
   }

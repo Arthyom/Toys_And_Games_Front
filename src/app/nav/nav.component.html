@@ -5,7 +5,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item ">
-                <a class="nav-link" routerLinkActive='active' routerLink='home' href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" routerLinkActive='active' routerLink='home' href="#">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLinkActive='active' routerLink='list' href="#">List</a>
@@ -17,9 +17,9 @@
 
           
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="form-inline my-2 my-lg-0" >
+            <input class="form-control mr-sm-2" #data (keyup)='onChange($event.target.value)' type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0"  (click)="onChange(data.value)"  type="button">Search</button>
+        </div>
     </div>
 </nav>

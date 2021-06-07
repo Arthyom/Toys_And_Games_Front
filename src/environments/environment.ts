@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  global_url : 'https://localhost:44352/api/'
+ // global_url : 'https://localhost:44352/api/'
+ global_url : 'https://wflsf.tk/api/'
 };
 
 /*

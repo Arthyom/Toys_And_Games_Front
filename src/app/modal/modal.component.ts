@@ -12,8 +12,9 @@ import { Subject } from 'rxjs';
 })
 export class ModalComponent  {
 
-  //@ViewChild('modalLanch') modal_trigger : ElementRef;
   item_to_del: Product;
+  message = 'The element has been removed correctly';
+  title = 'Deleting confirmation';
   removed_source: Subject<boolean> = new Subject<boolean>();
   removed$ = this.removed_source.asObservable();
   constructor(
@@ -22,7 +23,6 @@ export class ModalComponent  {
 
   show(){
     document.getElementById("modalLanch").click();
- 
   }
 
   hidde(){
@@ -30,13 +30,67 @@ export class ModalComponent  {
   }
 
   delete(){
+    this.hidde();
+    this.show_load();
+
+
     this.http_request.client.delete(`${environment.global_url}Products/${this.item_to_del.id}`)
-    .subscribe( (data)=>{
-      this.http_request.product_list = this.http_request.product_list.filter( (x)=>x.id != this.item_to_del.id );
-      this.hidde();
-      this.removed_source.next(true);
-    })
+    .subscribe( (data:any)=>{
+      
+     setTimeout(() => {
+       this.hidde_load();
+       if(data?.ok){
+        this.http_request.product_list = this.http_request.product_list.filter( (x)=>x.id != this.item_to_del.id );
+        this.removed_source.next(true);
+        this.show_comfirm();
+       }
+       else
+        this.launch_error();
+     }, 1500);
+    },
+    ()=>this.error_protocol()
+    
+    )
   }
 
+  ok(){
  
+    setTimeout(() => {
+      this.hidde_load();
+      this.show_comfirm();
+    }, 1500);
+  }
+
+  show_comfirm(){
+    document.getElementById("modalConfimLaunch").click();
+  }
+
+  hidde_confirm(){
+    document.getElementById("modalConfirmClose").click();
+  }
+
+  show_load(){
+    document.getElementById("modelLoadBtn").click();
+  }
+
+  hidde_load(){
+    
+   document.getElementById("modelLoadBtnClose").click();
+  
+  }
+
+ launch_error(){
+  
+    document.getElementById("modalErrorLaunch").click();
+    setTimeout(() => {
+      document.getElementById("modalErrorClose").click();
+    }, 5000);
+
+ }
+
+ error_protocol(){
+   this.hidde_load();
+   this.launch_error();
+ }
+
 }

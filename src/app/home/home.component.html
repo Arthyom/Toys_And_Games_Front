@@ -1,8 +1,13 @@
-<div class="card-group">
+<div class="card-group" >
+    <ng-container *ngIf="client_http.product_list.length">
+        <app-item-card class="m-3" *ngFor="let item of client_http.product_list" [item]='item'></app-item-card>
+    </ng-container>
+    
 
-    <app-item-card class="m-3" *ngFor="let item of client_http.product_list" [item]='item'></app-item-card>
     
     <div #modalContenedor></div>
 
 </div>
+
+<app-jumbotron *ngIf="!client_http.product_list.length"></app-jumbotron>
 

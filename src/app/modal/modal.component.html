@@ -10,13 +10,13 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title">Deleting confirmation</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                 </div>
                 <div class="modal-body">
-                    Do you want to remove {{item_to_del?.name}}
+                    <p>Do you want to remove <strong>{{item_to_del?.name}}</strong> ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id='modalClose' data-dismiss="modal" >Cancel</button>
@@ -26,4 +26,86 @@
         </div>
     </div>
 
+<!-- Button trigger modal -->
 
+<button [hidden]="true" id='modalConfimLaunch' type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalConfirm">
+    
+  </button>
+
+  
+  <!-- Modal -->
+  <div class="modal fade show"  id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">
+                    {{title}}
+                  </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+              </div>
+              <div class="modal-body">
+                  <p>{{message}}</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary"  id='modalConfirmClose' data-dismiss="modal" >Ok</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+ <!-- Button trigger modal -->
+ <button [hidden]='true' type="button" id="modelLoadBtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelLoad">
+   Launch
+ </button>
+ 
+ <!-- Modal -->
+ <div class="modal fade"  data-backdrop="static" data-keyboard="false" id="modelLoad" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+          
+             <div class="modal-body">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar"
+                        style="width: 100%;"></div>
+                    </div>
+                    Working please wait...
+                 <button [hidden]='true' type="button"  id="modelLoadBtnClose"  class="btn btn-secondary" data-dismiss="modal">Close</button>
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <!-- Button trigger modal -->
+
+<button [hidden]="true" id='modalErrorLaunch' type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalError">
+    
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade show"  id="modalError" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                  An Error has ocurred
+                </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <p>An error has ocurred, please try later</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"  id='modalErrorClose' data-dismiss="modal" >Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ 

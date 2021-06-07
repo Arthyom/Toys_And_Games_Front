@@ -7,7 +7,9 @@ import { Product } from '../intefaces/product';
 })
 export class GlobalGuiService {
 
-  deleted_emitter_source = new Subject<Product>();
+  private deleted_emitter_source = new Subject<Product>();
+
+
   constructor() { }
 
   
@@ -15,7 +17,11 @@ export class GlobalGuiService {
     return this.deleted_emitter_source.asObservable();
   }
   
+  
   emmit_deletion(item:Product){
     this.deleted_emitter_source.next(item);
   }
+
+  
+
 }

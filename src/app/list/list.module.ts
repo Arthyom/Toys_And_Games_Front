@@ -4,6 +4,7 @@ import { ListComponent } from './list.component';
 import { ItemComponent } from './item/item.component';
 import { HeaderItemComponent } from './header-item/header-item.component';
 import { RouterModule } from '@angular/router';
+import { JumbotronModule } from '../jumbotron/jumbotron.module';
 
 
 
@@ -12,6 +13,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
+    JumbotronModule
   ],
   exports:[
     ListComponent

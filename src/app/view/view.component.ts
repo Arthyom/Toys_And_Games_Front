@@ -17,7 +17,7 @@ export class ViewComponent implements OnInit {
   cmp_ref_typed: ComponentRef<ModalComponent>;
   item_id: string
   item: Product;
-  borrado = false;
+  
   constructor(
     private ac: ActivatedRoute,
     private http_client: DataLayerService,

@@ -7,7 +7,7 @@ import { Product } from '../intefaces/product';
 })
 export class DataLayerService {
 
-  private global_product_list: Product[];
+  private global_product_list: Product[] = [];
   constructor(
     private http_client : HttpClient
   ) { }
