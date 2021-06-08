@@ -26,6 +26,7 @@ export class ModalComponent  {
   }
 
   hidde(){
+
     document.getElementById("modalClose").click();
   }
 
@@ -41,8 +42,8 @@ export class ModalComponent  {
        this.hidde_load();
        if(data?.ok){
         this.http_request.product_list = this.http_request.product_list.filter( (x)=>x.id != this.item_to_del.id );
-        this.removed_source.next(true);
         this.show_comfirm();
+        this.removed_source.next(true);
        }
        else
         this.launch_error();

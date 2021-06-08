@@ -17,6 +17,7 @@ export class ViewComponent implements OnInit {
   cmp_ref_typed: ComponentRef<ModalComponent>;
   item_id: string
   item: Product;
+  asCard: false;
   
   constructor(
     private ac: ActivatedRoute,
@@ -41,7 +42,14 @@ export class ViewComponent implements OnInit {
     });
 
     this.cmp_ref_typed.instance.removed$.subscribe( (removed)=> {
-      this.router.navigate(['/home']);
+
+      setTimeout(() => {
+        const current_url: string = this.router.url
+        this.cmp_ref_typed.instance.hidde_confirm();
+        if(current_url.includes('view'))
+          this.router.navigate(['/home']);
+      }, 2500);
+     
     } );
   }
 

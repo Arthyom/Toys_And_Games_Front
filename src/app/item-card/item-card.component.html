@@ -1,5 +1,7 @@
-<div class="card" *ngIf="item">
-    <img class="card-img-top" [src]="item | noImage" alt="">
+<div class="card" *ngIf="item" [ngClass]="{'card-v':router.url.includes('view') }" >
+    <div class="card-img-top " [style.backgroundImage]=" 'url(' + (item | noImage) + ')'"  
+     [ngClass]="{'des': router.url.includes('view'), 'dec': !router.url.includes('view') } "  alt="">
+    </div>
     <div class="card-body">
         <div class="row fluid">
             <div class="col-md">
@@ -8,6 +10,8 @@
                 </button>
                 
             </div>
+
+            
 
             <div class="col-md">
                 <button type="button" [routerLink]="['/form/update', item.id]" class="btn btn-warning btn-block">
@@ -26,8 +30,11 @@
       
         </div>
         <small class="text-muted" >{{item.company}} &nbsp; | &nbsp;  from {{item.ageRestriction}} above</small>
-        <h4 class="card-title"> {{item.name}}</h4>
+        <h4 class="card-title "> {{item.name}}</h4>
         <p class="card-text">{{item.price | currency}}</p>
+        <p class="card-text" *ngIf="router.url.includes('view')">
+           <strong>Description: </strong> {{item.description}}
+        </p>
 
     </div>
     

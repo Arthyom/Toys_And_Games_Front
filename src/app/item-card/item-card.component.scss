@@ -1,4 +1,32 @@
-img{
-    width: 300px !important;
-    height: 300px  !important;
+
+
+.des{
+    width: 100% !important;
+    height: 500px !important;
+    background-repeat:no-repeat;
+
+    background-size: contain;
+    background-position: center;
+    background-color: whitesmoke;
+}
+
+.card-v{
+    
+    margin: auto;
+        width: 50%;
+        height: 400px;
+    
+}
+
+.dec{
+    background-color: whitesmoke;
+    min-width: 300px;
+    width: 100% !important;
+    height: 300px !important;
+    background-repeat:no-repeat;
+
+    background-size: contain;
+    background-position: center;
+
+
 }
