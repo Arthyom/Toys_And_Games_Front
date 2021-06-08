@@ -6,40 +6,50 @@
     <div class="row">
       <div class="col-8">
         <div class="form-group">
-          <label for="">Name</label>
-          <input type="text" class="form-control" formControlName="name" />
-          <small id="helpId" class="text-muted">Help text</small>
+          <label for="">Name*</label>
+          <input [ngClass]="{'is-invalid': general_form.controls.name.errors && general_form.controls.name.touched}" ngclas type="text" class="form-control " formControlName="name" />
+          <small *ngIf="general_form.controls.name.errors && general_form.controls.name.touched" id="helpId"  class="text-muted">"Name" is Required</small>
         </div>
 
         <div class="form-group">
-          <label for="">Price</label>
-          <input type="number" class="form-control" formControlName="price" />
-          <small id="helpId" class="text-muted">Help text</small>
+          <label for="">Price*</label>
+          <input [ngClass]="{'is-invalid': general_form.controls.price.errors && general_form.controls.price.touched}" type="number" class="form-control" formControlName="price" />
+          <small  *ngIf="general_form.controls.price.errors?.required && general_form.controls.price.touched" id="helpId" class="text-muted">"Price" is requiered</small>
+          <small  *ngIf="general_form.controls.price.errors?.max && general_form.controls.price.touched" id="helpId" class="text-muted">Must be 0 and 1000</small>
+          <small  *ngIf="general_form.controls.price.errors?.min && general_form.controls.price.touched" id="helpId" class="text-muted">Must be 0 and 1000</small>
+
         </div>
 
         <div class="form-group">
-          <label for="">Company</label>
-          <input type="input" class="form-control" formControlName="company" />
-          <small id="helpId" class="text-muted">Help text</small>
+          <label for="">Company*</label>
+          <input [ngClass]="{'is-invalid': general_form.controls.company.errors && general_form.controls.company.touched}" type="input" class="form-control" formControlName="company" />
+          <small *ngIf="general_form.controls.company.errors?.required && general_form.controls.company.touched" id="helpId" class="text-muted">"Company" is requiered</small>
+          <small *ngIf="general_form.controls.company.errors?.max && general_form.controls.touched" id="helpId" class="text-muted">Must be 50 charactes</small>
+
         </div>
 
         <div class="form-group">
           <label for="">Max Age</label>
           <input
+          [ngClass]="{'is-invalid': general_form.controls.ageRestriction.errors && general_form.controls.ageRestriction.touched}"
             type="number"
             class="form-control"
             formControlName="ageRestriction"
           />
-          <small id="helpId" class="text-muted">Help text</small>
+          <small  *ngIf="general_form.controls.ageRestriction.errors?.required && general_form.controls.ageRestriction.touched" id="helpId" class="text-muted">"Max Age" is requiered</small>
+          <small  *ngIf="general_form.controls.ageRestriction.errors?.max && general_form.controls.ageRestriction.touched" id="helpId" class="text-muted">Must be 0 and 100</small>
+          <small  *ngIf="general_form.controls.ageRestriction.errors?.min && general_form.controls.ageRestriction.touched" id="helpId" class="text-muted">Must be 0 and 100</small>
+
         </div>
 
         <div class="form-group">
           <label for="">Description</label>
           <textarea
+          [ngClass]="{'is-invalid': general_form.controls.description.errors && general_form.controls.description.touched}"
             class="form-control"
             formControlName="description"
           ></textarea>
-          <small id="helpId" class="text-muted">Help text</small>
+          <small *ngIf="general_form.controls.description.errors && general_form.controls.description.touched"  id="helpId" class="text-muted">Must be 100 charactes</small>
         </div>
       </div>
       <div class="col">
@@ -54,7 +64,6 @@
             name="imagen"
             (change)="onChange($event.target.files[0])"
           />
-          <small id="helpId" class="text-muted">Help text</small>
         </div>
       </div>
     </div>

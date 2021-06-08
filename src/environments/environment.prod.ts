@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  global_url : 'https://wflsf.tk/api/'
+
 };

@@ -52,6 +52,7 @@ export class FormComponent implements OnInit {
       imagen: new FormControl()
     });
     this.visible = true;
+    
   }
 
   onChange(file){
