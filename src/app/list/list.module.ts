@@ -5,6 +5,7 @@ import { ItemComponent } from './item/item.component';
 import { HeaderItemComponent } from './header-item/header-item.component';
 import { RouterModule } from '@angular/router';
 import { JumbotronModule } from '../jumbotron/jumbotron.module';
+import { ModalComponent } from '../modal/modal.component';
 
 
 
@@ -17,6 +18,9 @@ import { JumbotronModule } from '../jumbotron/jumbotron.module';
   ],
   exports:[
     ListComponent
+  ],
+  entryComponents:[
+    ModalComponent
   ]
 })
 export class ListModule { }

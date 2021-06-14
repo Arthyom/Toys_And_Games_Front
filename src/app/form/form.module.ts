@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { GlobalPipesModule } from '../pipes/globals-pipes.module';
 import { ModalModule } from '../modal/modal.module';
+import { ModalComponent } from '../modal/modal.component';
 
 
 
@@ -20,6 +21,9 @@ import { ModalModule } from '../modal/modal.module';
   ],
   exports:[
     FormComponent
+  ],
+  entryComponents:[
+    ModalComponent
   ]
 })
 export class FormModule { }

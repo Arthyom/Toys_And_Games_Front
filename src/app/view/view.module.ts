@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ViewComponent } from './view.component';
 import { ItemCardModule } from '../item-card/item-card.module';
 import { ModalModule } from '../modal/modal.module';
+import { ModalComponent } from '../modal/modal.component';
 
 
 
@@ -17,6 +18,9 @@ import { ModalModule } from '../modal/modal.module';
   ],
   exports:[
     ViewComponent
+  ],
+  entryComponents:[
+    ModalComponent
   ]
 })
 export class ViewModule { }

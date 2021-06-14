@@ -4,6 +4,7 @@ import { ItemCardComponent } from './item-card.component';
 import { GlobalPipesModule } from '../pipes/globals-pipes.module';
 import { RouterModule } from '@angular/router';
 import { ModalModule } from '../modal/modal.module';
+import { ModalComponent } from '../modal/modal.component';
 
 
 
@@ -19,6 +20,9 @@ import { ModalModule } from '../modal/modal.module';
   ],
   exports:[
     ItemCardComponent
+  ],
+  entryComponents:[
+    ModalComponent
   ]
 })
 export class ItemCardModule { }

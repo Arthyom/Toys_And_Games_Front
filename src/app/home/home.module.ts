@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { ItemCardModule } from '../item-card/item-card.module';
 import { JumbotronModule } from '../jumbotron/jumbotron.module';
+import { ModalComponent } from '../modal/modal.component';
 
 
 
@@ -14,6 +15,9 @@ import { JumbotronModule } from '../jumbotron/jumbotron.module';
     ItemCardModule,
     JumbotronModule,
     CommonModule
+  ],
+  entryComponents:[
+    ModalComponent
   ]
 })
 export class HomeModule { }
