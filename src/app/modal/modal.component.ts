@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Product } from '../intefaces/product';
 import { GlobalGuiService } from '../global-services/global-gui.service';
 import { DataLayerService } from '../global-services/data-layer.service';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { Subject } from 'rxjs';
 
 @Component({

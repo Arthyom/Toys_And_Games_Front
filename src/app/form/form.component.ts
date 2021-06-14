@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../intefaces/product';
 import { DataLayerService } from '../global-services/data-layer.service';
 import { catchError, map, take } from 'rxjs/operators'
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { ModalComponent } from '../modal/modal.component';
 import { EMPTY, empty } from 'rxjs';
 

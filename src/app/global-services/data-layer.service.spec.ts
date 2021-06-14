@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { DataLayerService } from './data-layer.service';
 
 import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { Product } from '../intefaces/product';
 import { product_list, product_response } from '../mocks/product_list';
 

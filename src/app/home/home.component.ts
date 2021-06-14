@@ -1,5 +1,5 @@
 import { Component, ComponentFactoryResolver, ComponentRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { DataLayerService } from '../global-services/data-layer.service';
 import { Product } from '../intefaces/product';
 import { map } from 'rxjs/operators';

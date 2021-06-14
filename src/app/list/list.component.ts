@@ -1,7 +1,7 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewChild, ViewContainerRef, ComponentRef } from '@angular/core';
 import { Product } from '../intefaces/product';
 import { DataLayerService } from '../global-services/data-layer.service';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { GlobalGuiService } from '../global-services/global-gui.service';
 import { ModalComponent } from '../modal/modal.component';
 

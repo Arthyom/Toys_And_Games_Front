@@ -5,7 +5,7 @@ import { DataLayerService } from '../global-services/data-layer.service';
 import { HttpClientTestingModule,HttpTestingController } from '@angular/common/http/testing';
 import { By } from '@angular/platform-browser';
 import { product_list, product_response } from '../mocks/product_list';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 
 describe('ModalComponent', () => {
   let component: ModalComponent;
